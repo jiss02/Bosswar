@@ -13,6 +13,7 @@ h3{
   box-shadow:  10px 10px 10px 1px rgba(173, 173, 173,0.15);
   padding-top: 10px; 
   padding-right: 20px;
+  padding-bottom: 20px;
   font-family: 'DungGeunMo'; 
 
 }
@@ -45,7 +46,6 @@ h3{
     width:17%;
     padding:2%;
     margin-left:80%;
-    margin-bottom: 20px;
     background: #e52d27;
     text-align: center;
     display: block;

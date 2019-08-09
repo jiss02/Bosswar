@@ -47,6 +47,7 @@ h3{
     margin-left:80%;
     background: #e52d27;
     text-align: center;
+    display: block;
 }
 a:hover,a:active {
   text-decoration: none;

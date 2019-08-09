@@ -4,7 +4,7 @@ h3{
     font-family: 'Sam3KRFont';
 }
 .honorcard{
-  width:80%;
+  width:85%;
   margin: auto;
   border-radius: 25px;
   border-radius: 25px;
@@ -42,9 +42,9 @@ h3{
 #button{
     border: 1px solid #e52d27;
     border-radius: 5px;
-    width:10%;
+    width:20%;
     padding:2%;
-    margin-left:20%;
+    margin-left:80%;
     background: #e52d27;
     text-align: center;
     display: block;

@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block centername %}
+보스대전
+{% endblock centername %}
+
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'mission/mission_index.css' %}" />
+  
+  <script>
+    // Set the date we're counting down to
+    var year = {{mission.first.end_at|date:"Y"}}
+    var month = {{mission.first.end_at|date:"n"}}-1;
+    var day = {{mission.first.end_at|date:"j"}};
+    var hours = {{mission.first.end_at|date:"G"}};
+    var minutes = {{mission.first.end_at|date:"i"}};
+    var second = {{mission.first.end_at|date:"s"}};
+
+    var countDownDate = new Date(year, month, day, hours, minutes, second).getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+      // Get today's date and time
+      var now = new Date().getTime();
+        
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+        
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+      // Output the result in an element with id="demo"
+      document.getElementById("demo").innerHTML = days + " : " + hours + " : "
+      + minutes + " : " + seconds;
+        
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "기간이 지났습니다.";
+      }
+    }, 1000);
+   
+  </script>
+
+{% endblock head %}
+
+{% block content %}
+  {% if Mission_end %}
+  <br>
+  <br>
+  {{ Mission_end }}
+  <br>
+  {% endif %}
+  <div class="jumbotron">
+    <div class='mission_header'>MISSION</div>
+    {% for m in mission  %}
+    <h2 id="missionname">{{m.mission_name}}</h2>
+    <div class='mission_clock'>남은 시간</div>
+    <h4 id="clock">
+      <div id="demo"></div>
+    </h4>
+    {% endfor %}
+  </div>  
+
+  <br>
+  {% for post in posts %}
+  <div class="card" align='center'>
+    <a href="{% url 'detail' post.id %}"> 
+    <p id='title'>{{post.title}}</p>
+    <p id='writer'>작성자: {{post.writer}}
+    <br> 득표수: {{post.votelike.count}}</p>
+    
+    
+      <img id="image" src="{{post.content.url}}" alt="이미지"  />
+    </a>
+  </div>
+  <br>
+  {% endfor %}
+  </div>
+  
+  <!--페이지네이션-->
+
+  <div class = "pagination justify-content-center">
+  
+    
+      {% if posts.has_previous %}
+      <button class="btn p" type="button" onclick="location.href='?page=1' ">처음</button>
+      <button class="btn p" type="button" onclick="location.href='?page={{posts.previous_page_number}}' ">이전</button>
+      {% else %}
+      <button class="btn p">처음</button>
+      <button class="btn p">이전</button>
+      {% endif %}
+    <div class = "front_pagnation">
+    </div>
+
+    <div class = "page_status">
+      <span class="page">{{posts.number}}</span>
+      <span class="page"> of </span>
+      <span class="page" >{{posts.paginator.num_pages}}</span>
+    </div>
+      
+    
+      {% if posts.has_next %}
+      <button class="btn p" type="button" onclick="location.href='?page={{posts.next_page_number}}' ">다음</button>
+      <button class="btn p" type="button" onclick="location.href='?page={{posts.paginator.num_pages}}' ">마지막</button>
+
+      {% else %}
+      <button class="btn p">다음</button>
+      <button class="btn p">마지막</button>
+      {% endif %}
+    <div class = "back_pagnation">
+    </div>
+  </div>
+  <br>
+  <br>
+  {% if user.is_authenticated %}
+  <div class = "create_button">
+    <a class = 'btn main-btn' href="{% url 'postcreate' %}">참가하기</a>
+    {% else %}
+    <a class = 'btn main-btn' href="{% url 'login' %}" onclick="return confirm('로그인을 한 후, \'참가하기\'가 가능합니다.')">참가하기</a>
+    {% endif %}
+  </div>
+
+  
+{% endblock content%}  
+

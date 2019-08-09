@@ -1,0 +1,72 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+    <head> 
+
+        <title>Bosswar</title>
+
+        <nav id="bar" class="navbar navbar navbar-expand-lg navbar-dark" style="background-color: #272323; font-family: 'DungGeunMo';">
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <img src="{% static 'mission/img/favicon.png' %}" width=80px height=80px style="margin: 10px;">
+            </a>
+            <div style="font-size: 2.7rem; color:white; margin:0 6rem 0 3rem;">
+                {% block centername %}
+                
+                {% endblock centername %}
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="{% url 'index'  %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style = "font-size: 1.6rem;">
+          {% if user.is_authenticated %}
+            예비 보스 {{user.username}} 님 입장!
+          {% else %}
+            보스가 되어보세요!
+          {% endif %}
+        </a> 
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style='opacity: 0.9;'>
+        {% if not user.is_authenticated %}
+            <a class="dropdown-item" href="{% url 'login' %}" style='font-size: 1.2rem'>로그인</a>
+            <a class="dropdown-item" href="{% url 'signup' %}" style = "font-size: 1.2rem;">회원가입</a>
+        {% else %}
+            <a class="dropdown-item" href="javascript:{document.getElementById('logout').submit()}" style = "font-size: 1.2rem;">로그아웃</a>
+            <form action="{% url 'logout' %}" method="POST" id="logout">
+            {% csrf_token %}
+            <input type="hidden">
+            </form>
+            <a class="dropdown-item" href="{% url 'mypage' %}" style = "font-size: 1.2rem;">회원정보</a>
+        {% endif %}
+        </div>
+      </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'ideaboard' %}" style = "font-size: 1.6rem;">아이디어 보드 </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'honors' %}" style = "font-size: 1.6rem;">명예의 전당 </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}" style = "font-size: 1.6rem;">보스대전이란?</a>
+            </li>
+        </nav>
+        <br>
+
+        
+        {% block head %}
+        {% endblock head %}
+
+        <link rel="shortcut icon" type="image/png" href="{% static 'mission/img/favicon.png' %}" />
+
+    </head>
+    <body>
+        {% block content %}
+        {% endblock content %} 
+    </body>
+</html>

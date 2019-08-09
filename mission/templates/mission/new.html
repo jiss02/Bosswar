@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block centername %}
+보스대전
+{% endblock centername %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'mission/mission_new.css' %}">
+{% endblock head %}
+
+{% block content %}
+
+<div align="center">
+    <h1>mission/new.html</h1>
+
+    <form method = 'POST'>
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <br>
+        <input type="submit" value="등록">
+    </form>
+    
+</div>
+
+{% endblock content %}
+

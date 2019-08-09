@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block centername %}
+보스대전
+{% endblock centername %}
+
+{% block head %}
+    <link type='text/css' rel='stylesheet' href="{% static 'post/detail.css' %}">
+{% endblock head %}
+    
+{% block content %}
+
+{% if error %}
+{{ error }}
+{% endif %}
+<div class="container_">
+
+    <div class="box1">
+        <h1>{{post.title}}</h1>
+    </div>
+    <div class="box2">
+        작성자 : {{post.writer}}
+    </div>
+    <div class="box3">
+        {% if vote %}
+            <img src="{% static 'post/img/yes.png' %}" width="30"/>
+        {% else %}
+            <img src="{% static 'post/img/no.png' %}" width="30"/>
+        {% endif %}득표 수 : {{ post.votelike.count}}
+    </div>
+    <div class="box4">
+        {{post.created_at|date:"y/m/j g시 i분"}} 작성
+    </div>
+    <div class="box5">
+        <img src="{{post.content.url}}" alt="이미지" class="img_" width="452" height="254"/>
+    </div>
+    <div class="box6">
+        <iframe width="452" height="254" src="{{post.urlcontent}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="box7">
+        {{post.description|linebreaks}}
+    </div>
+    <div class = "box8">
+    </div>
+    <div class="box9">
+        {% if user.is_authenticated %}
+            남은 투표 수 : {{request.user.profile.votes}}
+        {% endif %}
+    </div>
+    <div class="box10">
+        {% if post.writer != request.user %}
+            {% if flag %}
+                <a class='btn main-btn' href="{% url 'postvote' post.id %}" onclick="alert('미션이 마감되어 투표가 불가능합니다.')">마감</a>
+            {% elif vote %}
+                <a class='btn main-btn' href="{% url 'postvote' post.id %}">투표취소</a>
+            {% elif request.user.profile.votes == 0 %}
+                <a class='btn main-btn' href="{% url 'postvote' post.id %}" onclick="alert('모든 표가 소진되었습니다!')">투표하기</a>
+            {% elif post.writer != request.user %}
+                <a class='btn main-btn' href="{% url 'postvote' post.id %}">투표하기</a>
+            {% endif %}
+        {% endif %}
+        
+        {% if post.writer == request.user %}
+        <a class='btn main-btn' href="{% url 'postdelete' post.id %}" onclick="return confirm('삭제하시겠습니까?')">삭제하기</a>
+        {% else %}
+        {% endif %}
+    </div>
+    <div class="box11">
+    <a class='btn main-btn' href="{% url 'index' %}">메인으로</a>
+    </div>
+</div>  
+{% endblock %}  
+

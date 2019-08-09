@@ -1,0 +1,36 @@
+h1{
+    text-align:center;
+    margin-top:300px;
+    font-size:100px;
+    font-family: 'Sam3KRFont';
+}
+
+.signup-form{
+    text-align:center;
+    margin-top:50px;
+    font-family: 'DungGeunMo';
+}
+input{
+font-size:40px;
+width:70%;
+color:#414141;
+border-color:transparent;
+border-bottom: thin solid #616161;
+}
+input[type=submit]{
+    border-radius:10px;
+    border-color:transparent;
+    background-color:#FC134F;
+    width:70%;
+    padding:20px;
+    font-size:40px;
+    color:white;
+    margin-top : 15px;
+}
+h5{
+    text-align:left;
+    margin-left:15%;
+    color: #616161;
+}
+@font-face { font-family: 'Sam3KRFont'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/Sam3KRFont.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'DungGeunMo'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff'); font-weight: normal; font-style: normal; }

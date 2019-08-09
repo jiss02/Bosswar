@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block centername %}
+명예의 전당
+{% endblock centername %}
+
+{% block content %}
+{% load staticfiles %}
+{% if error %}
+{{ error }}
+<br>
+<br>
+{% endif %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'mission/honors.css' %}" />
+{% endblock head %}
+<!--몇회차+제목
+{% for first in 객체s.all %}
+{% endfor %}
+-->
+
+<br><br>
+<div align="center">
+    <h1 style="font-family: 'Sam3KRFont';"><img src="{% static 'mission/img/trophy.png' %}" width=50px height=50px>명예의 전당<img src="{% static 'mission/img/trophy.png' %}" width=50px height=50px></h1>
+</div>
+
+<br>
+
+<div class="honorcard">
+     
+{% for mission, post in honor %}
+    <div id="honor_mission">도전 미션: {{ mission.mission_name }}<br></div>
+    
+    <div id="honor_post">{{ post.title }}</div>
+    <div id='honor_description'>{{post.description}}</div>
+    <span class="button" align='center'><a href="{% url 'detail' post.id %}" style='color:white;'>보러가기</a></span>
+    <br>
+    <br>
+    
+    <!--득표수+자세히-->
+    
+{% endfor %}
+</div> 
+{% endblock %}

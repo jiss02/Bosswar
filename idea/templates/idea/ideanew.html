@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block centername %}
+아이디어보드
+{% endblock centername %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'idea/idea_board.css' %}">
+{% endblock head %}
+
+{% block content %}
+
+<div align="center" style="font-family: 'DungGeunMo';">
+
+    <br><br><br><br><br><br><br><br><br>
+    <img src="{% static 'idea/img/pencil.png' %}" width=130px height=130px>
+    <br><br><br>
+
+    <div class="title_3">새로운 아이디어</div>
+
+    <br>
+    
+        <form method='POST'>
+            {% csrf_token %}
+            <table>
+                {{form.as_table}}
+            </table>
+            <br><br>
+
+            <input type="submit" value="등록">
+        </form>
+    
+    <br><br>
+</div>
+
+{% endblock content %}

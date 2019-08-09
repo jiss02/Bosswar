@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block centername %}
+보스대전
+{% endblock centername %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'account/signup.css' %}">
+{% endblock head %}
+
+{% block content %}
+{% if pwerror %}
+<span style="text-align: center;">{{ pwerror }}<span>
+{% endif %}
+
+    <h1>Welcome <br> New Boss!</h1>
+    <div class='signup-form'>
+    <form method="POST" action="{% url 'signup' %}">
+        {% csrf_token %}
+        <br>
+        <input type="text" id = 'username 'name ="username" value="" pattern="^[가-힣]{2,20}$" placeholder='이름' required='required' onkeyup='duplicationcheck()'>
+        <br>
+        <!--
+        Email:
+        <br>
+        <input type="email" name="email" value="">
+        <br>
+         [a-zA-Z]\D{6,10}\d{2,6}
+        -->
+        <br>
+        <input type="text" name="phonenumber" inputmode='numeric' pattern='\d{3}-\d{3,4}-\d{4}' placeholder='전화번호' required='required'>
+        <br>
+        <br>
+        <input type="password" name="password1" placeholder='비밀번호' pattern="^[A-Za-z0-9]{6,12}$" value="" required='required'>
+        <h5>*영문 대소문자, 숫자 6~12자리</h5>
+        <br>
+        <input type="password" name="password2" value="" placeholder='비밀번호 확인' required='required'>
+        <br>
+        <br>
+        <input type="submit" value="회원가입">
+        </form>
+    </div>
+{% endblock %}

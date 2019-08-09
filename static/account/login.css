@@ -1,0 +1,47 @@
+.login-form{
+    text-align:center;
+    margin-top:50px;
+}
+input[type="text"]{
+    font-size:40px;
+    color:#414141;
+    width:70%;
+    border-color:transparent;
+    border-bottom: thin solid #616161;
+    font-family: 'DungGeunMo';
+}
+input[type="password"]{
+    font-size:40px;
+    width:70%;
+    color:#414141;
+    border-color:transparent;
+    border-bottom: thin solid #616161;
+    font-family: 'DungGeunMo';
+}
+input[type='submit']{
+    border-radius:10px;
+    border-color:transparent;
+    background-color:#FC134F;
+    width:70%;
+    padding:20px;
+    font-size:40px;
+    color:white;
+    font-family: 'DungGeunMo'
+}
+h2{
+    text-align: center;
+    font-family: 'Sam3KRFont';
+    font-size: 4rem;
+}
+
+img.login_star {
+    width: 14rem;
+    display: block;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+
+@font-face { font-family: 'Sam3KRFont'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/Sam3KRFont.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'DungGeunMo'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff'); font-weight: normal; font-style: normal; }

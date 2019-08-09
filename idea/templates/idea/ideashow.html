@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block centername %}
+아이디어보드
+{% endblock centername %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'idea/idea_board.css' %}">
+{% endblock head %}
+
+{% block content %}
+
+<div align="center">
+    <div class="idea_detail">
+        <br><br><br><br><br><br>
+        <div class="title_3"><div class="border_1">{{idea.title}}</div></div>
+        <br><br>
+        <p style="font-size: 40px;">작성자: {{idea.whoseidea}}</p>
+        <br>
+        <p style="font-size: 40px;">{{idea.content}}</p>
+    
+        <br><br><br><br><br><br>
+        {% if request.user == idea.whoseidea  %}
+        <span style="font-size: 30px;"><a href="{% url 'ideadelete' idea.id %}" onclick="return confirm('삭제하시겠습니까?')">삭제하기</a></span>
+        {% else %}
+        {% endif %}
+        <br><br>
+        <span style="font-size: 30px; background:#e52d27; padding:30px; border-radius:25px;"><a href="{% url 'ideaboard' %}" style='color:white'>돌아가기</a></span>
+        <br>
+    </div>
+
+</div>
+
+{% endblock content %}

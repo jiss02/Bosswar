@@ -1,0 +1,45 @@
+h3{
+    margin: 35px;
+    text-align: center;
+    font-family: 'Sam3KRFont';
+}
+.honorcard{
+  width:90%;
+  margin: auto;
+  border-radius: 25px;
+  border-radius: 25px;
+   
+    border-top: transparent;
+    box-shadow:  10px 10px 10px 1px rgba(173, 173, 173,0.15);
+  padding-top: 10px; 
+  padding-right: 20px;
+  font-family: 'DungGeunMo'; 
+}
+
+#honor_mission{
+    margin-left:35px;
+    font-size: 20px;
+    color: #616161;
+}
+#honor_post{
+    margin-left:35px;
+    font-size: 35px;
+    color: #414141
+}
+.button{
+    border: 1px solid #e52d27;
+    border-radius: 5px;
+    width: 70%;
+    padding:10px;
+    margin-left:90%;
+    background: #e52d27;
+    text-align: center;
+}
+a:hover,a:active {
+
+  text-decoration: none;
+}
+
+@font-face { font-family: 'Sam3KRFont'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/Sam3KRFont.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'DungGeunMo'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff'); font-weight: normal; font-style: normal; }
+

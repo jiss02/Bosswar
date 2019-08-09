@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block centername %}
+아이디어보드
+{% endblock centername %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'idea/idea_board.css' %}">
+{% endblock head %}
+
+{% block content %}
+
+<div align="center">
+    <h1>idea/ideaedit.html</h1>
+
+    <form method='POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <br>
+        <input type="submit" value="수정">
+    </form>
+</div>
+
+{% endblock content %}

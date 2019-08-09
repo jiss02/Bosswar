@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block centername %}
+보스대전
+{% endblock centername %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'post/new.css' %}">
+{% endblock head %}
+
+{% block content %}
+
+{% if error %}
+{{ error }}
+<br>
+<br>
+{% endif %}
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class='new-form'>
+        <table>
+            미션번호: {{form.mission_number}}
+            <br><br>
+            제목: <span id="title">{{form.title}}</span> 
+            사진: <span id='content'>{{form.content}}</span> 
+            <br>
+            유튜브 링크 (선택): <span id='urlcontent'>{{form.urlcontent}}</span> 
+            <br><br>
+            설명: <span id='description'>{{form.description}}</span>
+            <br>           
+        </table>
+        <br>
+        <div align="center"><input  type="submit" value="등록"></div>
+        <br>
+    </div>
+</form>
+
+{% endblock %}
+</body>

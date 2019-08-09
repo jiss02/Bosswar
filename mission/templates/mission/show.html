@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block centername %}
+보스대전
+{% endblock centername %}
+
+{% block content %}
+<h1>mission/show.html</h1>
+
+<a href="{% url 'index' %}">뒤로 가기</a>
+
+<a href="{% url 'missiondelete' mission.id %}" onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a> 
+
+<h3>제목 : {{ mission.title }}</h3>
+<h5>작성 날짜 : {{ mission.created_at }}</h5>
+<p>{{ mission.content|linebreaks }}</p>
+{% endblock content %}

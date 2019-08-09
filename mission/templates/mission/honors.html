@@ -26,19 +26,20 @@
 
 <br>
 
-<div class="honorcard">
      
 {% for mission, post in honor %}
-    <span id="honor_mission">도전 미션: {{ mission.mission_name }} <img src="{% static 'mission/img/trophy.png' %}" width=50px height=50px><br>
-    <br>0.
+
+<div class="honorcard">
+    <br>
+    <div id="honor_mission">도전 미션 <{{ mission.mission_name }}> 의 우승자</div>
+    <br>
     <div id="honor_post">{{ post.title }}</div>
     <div id='honor_description'>{{post.description}}</div>
-    <span class="button" align='center'><a href="{% url 'detail' post.id %}" style='color:white;'>보러가기</a></span>
-    <br>
-    <br>
-    </span>
+    <div id="button" align='center'><a href="{% url 'detail' post.id %}" style='color:white;'>보러가기</a></div>
+</div>
+<br><br>
+{% endfor %}
+
     <!--득표수+자세히-->
     
-{% endfor %}
-</div> 
 {% endblock %}

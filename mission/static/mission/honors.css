@@ -29,25 +29,26 @@ h3{
     font-size: 25px;
     color: #414141;
     font-weight: bold;
+    
 }
 
 #honor_description{
   margin-left:35px;
   font-size: 20px;
-  color: #414141
+  color: #414141;
+  
 }
 
-.button{
+#button{
     border: 1px solid #e52d27;
     border-radius: 5px;
-    width: 90%;
-    padding:10px;
-    margin-left:60%;
+    width:90%;
+    padding:2%;
+    margin-left:80%;
     background: #e52d27;
     text-align: center;
 }
 a:hover,a:active {
-
   text-decoration: none;
 }
 

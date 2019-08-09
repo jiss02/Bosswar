@@ -9,7 +9,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=200)
     content = models.ImageField(upload_to='images/')
-    urlcontent = models.URLField(null=True,max_length=200)
+    urlcontent = models.URLField(blank=True,max_length=200)
     description = models.TextField()
     users = models.ManyToManyField(User, through='PostVote')
 

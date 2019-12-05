@@ -115,7 +115,7 @@ $ python manage.py runserver
 &nbsp;
 ### Links
 * Project Link: https://github.com/jiss02/Bosswar.git
-* Website Link: [https://bossofwar.herokuapp.com](https://schoolgaza.herokuapp.com)
+* Website Link: [https://bossofwar.herokuapp.com](https://bossofwar.herokuapp.com)
 &nbsp;
 ### Demo
 <div align="center">

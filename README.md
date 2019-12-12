@@ -118,20 +118,20 @@ $ python manage.py runserver
 * Website Link: [https://bossofwar.herokuapp.com](https://bossofwar.herokuapp.com)
 &nbsp;
 ### Demo
+
+
+
 <div align="center">
-<img width="436" alt="스크린샷 2019-11-08 오전 3 35 40" src="https://user-images.githubusercontent.com/42693808/70032577-0bf30900-15f1-11ea-9223-db9e7894254e.jpg">
 
-<img width="436" alt="스크린샷 2019-11-08 오전 3 35 40" src="https://user-images.githubusercontent.com/42693808/70032569-0ac1dc00-15f1-11ea-8fcb-340a11f596ce.jpg">
-
-<img width="436" alt="스크린샷 2019-11-08 오전 3 35 40" src="https://user-images.githubusercontent.com/42693808/70032571-0ac1dc00-15f1-11ea-845a-4906fc556de8.jpg">
-
-<img width="436" alt="스크린샷 2019-11-08 오전 3 35 40" src="https://user-images.githubusercontent.com/42693808/70032576-0b5a7280-15f1-11ea-9b5e-8af88911b233.jpg">
-
-<img width="436" alt="스크린샷 2019-11-08 오전 3 35 40" src="https://user-images.githubusercontent.com/42693808/70032572-0ac1dc00-15f1-11ea-8246-bff83f1f2248.jpg">
-
-<img width="436" alt="스크린샷 2019-11-08 오전 3 35 40" src="https://user-images.githubusercontent.com/42693808/70032573-0b5a7280-15f1-11ea-9974-e28112103c41.jpg">
-
-<img width="436" alt="스크린샷 2019-11-08 오전 3 35 40" src="https://user-images.githubusercontent.com/42693808/70032575-0b5a7280-15f1-11ea-8b5a-764dd8e60b8b.jpg">
+| main 1 | main 2 |
+| :---: |:---:|
+| <img width="380" alt="스크린샷 2019-11-08 오전 3 35 40" src="https://user-images.githubusercontent.com/42693808/70032577-0bf30900-15f1-11ea-9223-db9e7894254e.jpg"> | <img width="380" alt="스크린샷 2019-11-08 오전 3 35 40" src="https://user-images.githubusercontent.com/42693808/70032569-0ac1dc00-15f1-11ea-8fcb-340a11f596ce.jpg"> |
+| about | detail |
+| <img width="380" alt="스크린샷 2019-11-08 오전 3 35 40" src="https://user-images.githubusercontent.com/42693808/70032571-0ac1dc00-15f1-11ea-845a-4906fc556de8.jpg"> | <img width="380" alt="스크린샷 2019-11-08 오전 3 35 40" src="https://user-images.githubusercontent.com/42693808/70032576-0b5a7280-15f1-11ea-9b5e-8af88911b233.jpg"> |
+| idea board | winners |
+| <img width="380" alt="스크린샷 2019-11-08 오전 3 35 40" src="https://user-images.githubusercontent.com/42693808/70032572-0ac1dc00-15f1-11ea-8246-bff83f1f2248.jpg"> | <img width="380" alt="스크린샷 2019-11-08 오전 3 35 40" src="https://user-images.githubusercontent.com/42693808/70032573-0b5a7280-15f1-11ea-9974-e28112103c41.jpg"> |
+| my page | ... |
+| <img width="380" alt="스크린샷 2019-11-08 오전 3 35 40" src="https://user-images.githubusercontent.com/42693808/70032575-0b5a7280-15f1-11ea-8b5a-764dd8e60b8b.jpg"> | ... |
 
 </div>
 

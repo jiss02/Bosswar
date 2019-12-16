@@ -103,11 +103,20 @@ $ git clone https://github.com/jiss02/Bosswar.git
 ```sh
 $ python manage.py migrate
 ```
+3. Create config folder and key.json
+
+```sh
+$ mkdir config
+$ cd config
+$ vim key.json
+```
+
 4. Run server
+
 ```
 $ python manage.py runserver
 ```
-&nbsp;
+
 ## Details 
 
 ### Deploy

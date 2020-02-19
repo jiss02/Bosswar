@@ -65,9 +65,9 @@
 
 ### Prerequisites
 
-Setup project environment with [virtualenv](https://virtualenv.pypa.io) and [pip](https://pip.pypa.io).
+Setup project environment with [venv](https://docs.python.org/3/library/venv.html) and [pip](https://pip.pypa.io).
 
-* virtualenv
+* setting venv
 ```bash
 $ python -m venv venv
 $ . venv/Scripts/activate
